@@ -1,42 +1,22 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import useContentful from "./useContentful";
+import Images from "./images";
 
-function App() {
-
-  const [blogData, setBlogData] = useState(null);
-  const [loading, setLoading] = useState(true);
+const App = () => {
+  const [blog, setBlog] = useState([]);
+  const { getBlog } = useContentful();
 
   useEffect(() => {
-    setLoading(true)
-    fetch(`https://cdn.contentful.com/spaces/qiq9w8fj2md5/environments/master/entries?access_token=WNQszWbpf5NAWJLTmFTPYa3CH7uTBUr5NPLo1cYFttA`)
-      .then(response => {
-        if (response.ok) {
-          console.log(response)
-          return response.json();
-
-        }
-        throw new Error('Request failed!');
-      }, networkError => console.log(networkError.message)
-      ).then(data => {
-        setBlogData(data);
-        setLoading(false);
-        console.log(data);
-      })
-      .catch((error) => {
-        setError(error);
-        setLoading(false);
-      });
-  }, [])
-
-  console.log(blogData.items)
+    getBlog().then((response) => response && setBlog(response));
+  }, []);
 
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-      {/* <img src={`${blogData.items[0].fields.destinationImage[0].sys.id}`} alt="" /> */}
+    <div>
+      {blog.map((content, index) => (
+        <Images key={index} content={content} />
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

@@ -1,12 +1,16 @@
 import { createClient } from "contentful";
 import './App.css'
 
+console.log(import.meta.env)
+
 const useContentful = () => {
   const client = createClient({
-    space: "qiq9w8fj2md5",
-    accessToken: "WNQszWbpf5NAWJLTmFTPYa3CH7uTBUr5NPLo1cYFttA",
+    space: import.meta.env.VITE_SPACE,
+    accessToken: import.meta.env.VITE_ACCESS_TOKEN,
     host: "cdn.contentful.com"
   });
+
+
 
   const getBlog = async () => {
     try {
@@ -14,15 +18,17 @@ const useContentful = () => {
         content_type: "titel",
         select: "fields"
       });
-
+      console.log("before sanitation", entries)
       const sanitizedEntries = entries.items.map((item) => {
-        const destinationImage = item.fields.destinationImage[0].fields;
+        return item.fields
+        const destinationImage = item.fields.destImage.fields.file;
+        console.log("item", item)
         return {
           ...item.fields,
           destinationImage
         };
       });
-
+      console.log("sanitized", sanitizedEntries)
       return sanitizedEntries;
     } catch (error) {
       console.log(`Error fetching content ${error}`);

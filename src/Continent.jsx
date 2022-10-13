@@ -6,6 +6,8 @@ export default function Continent() {
 
     return (
 
+
+
         <DestCard />
     )
 

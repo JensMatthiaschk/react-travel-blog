@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import { CMSContext } from './CMSContext'
 import DestCard from "./DestCard";
-// import useContentful from "./useContentful";
-import Images from "./images";
 
 const App = () => {
   return (
-    <div>
+    <div className="gap-10">
       <DestCard />
     </div>
   );

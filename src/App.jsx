@@ -1,22 +1,11 @@
 import { useEffect, useState } from "react";
-import useContentful from "./useContentful";
-import Images from "./images";
+import { CMSContext } from './CMSContext'
+import DestCard from "./DestCard";
 
 const App = () => {
-  const [blog, setBlog] = useState([]);
-  const { getBlog } = useContentful();
-
-  useEffect(() => {
-    getBlog().then((response) => response && setBlog(response));
-  }, []);
-
-  console.log("blog", blog)
-
   return (
-    <div>
-      {blog.map((content, index) => (
-        <Images key={index} content={content} />
-      ))}
+    <div className="gap-10">
+      <DestCard />
     </div>
   );
 };

@@ -1,12 +1,22 @@
-import { useEffect, useState } from "react";
-import { CMSContext } from './CMSContext'
 import DestCard from "./DestCard";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./Home";
+import Continent from "./Continent";
+import NoPage from "./NoPage";
 
 const App = () => {
   return (
-    <div className="gap-10">
-      <DestCard />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>  
+          <Route index element={<Home />} />
+          <Route path="Continent" element={<Continent />} />
+          <Route path="DestCard" element={<DestCard />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+     </BrowserRouter>
   );
 };
 

@@ -1,0 +1,37 @@
+div h1 {
+font-size: 4rem;
+font-weight: 800;
+}
+
+div h2 {
+font-size: 3rem;
+padding: 2rem 0;
+font-weight: 800;
+margin: 0 100px;
+}
+
+div h3 {
+font-size: 1.5rem;
+padding: 2rem 0;
+font-weight: 800;
+}
+
+div p {
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.detailPage p, .detailPage h1, .detailPage h2, .detailPage h3, .detailPage ol {
+    margin: 0 100px;
+}
+
+div ol {
+    line-height: 1.5rem;
+    padding: 2rem 0;
+    font-size: 1.2rem;
+}
+
+.imageContainer {
+padding: 150px;
+}

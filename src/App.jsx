@@ -1,22 +1,27 @@
-import DestCard from "./DestCard";
+import DestCard from "./pages/DestCard";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
-import Home from "./Home";
-import Continent from "./Continent";
-import NoPage from "./NoPage";
+import Home from "./pages/Home";
+import Continents from "./pages/Continents";
+import ContinentDetail from "./pages/ContinentDetail";
+import DestinationDetail from "./pages/DestinationDetail";
+import ErrorPage from "./pages/ErrorPage";
+import './App.css'
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>  
+        <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="Continent" element={<Continent />} />
+          <Route path="Continents" element={<Continents />} />
+          <Route path="ContinentDetail/:id" element={<ContinentDetail />}></Route>
           <Route path="DestCard" element={<DestCard />} />
-          <Route path="*" element={<NoPage />} />
+          <Route path="DestinationDetail/:id" element={<DestinationDetail />} />
+          <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
-     </BrowserRouter>
+    </BrowserRouter>
   );
 };
 

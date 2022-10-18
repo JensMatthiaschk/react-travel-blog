@@ -2,8 +2,6 @@ import ReactMarkdown from 'react-markdown';
 import { useContext } from 'react';
 import { CMSContext } from '../CMSContext';
 import { useParams } from "react-router-dom";
-import { GoogleMap, withScriptjs, withGoogleMap, Marker } from 'react-google-maps';
-import Map from '../Map';
 
 export default function ContinentDetail() {
     const { destinationEntries } = useContext(CMSContext)

@@ -5,8 +5,10 @@ import ReactMarkdown from 'react-markdown';
 import DestCard from './DestCard';
 
 export default function ContinentDetail() {
-    const { continentEntries } = useContext(CMSContext)
+    const { continentEntries, destinationEntries } = useContext(CMSContext)
     const { id } = useParams();
+
+    // console.log("ContinentDetail", id, destinationEntries[0].travelRegion)
 
     return (
         // <h1>{id}</h1>
@@ -31,7 +33,7 @@ export default function ContinentDetail() {
                 }
             </div >
             <h2>Explore travel destinations in that region</h2>
-            <DestCard />
+            <DestCard id={id} />
         </>
     )
 

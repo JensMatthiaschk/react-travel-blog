@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.7",
+    "bootstrap-icons": "^1.9.1",
     "contentful": "^9.2.5",
     "daisyui": "^2.31.0",
     "i": "^0.3.7",

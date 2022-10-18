@@ -35,3 +35,11 @@ div ol {
 .imageContainer {
 padding: 150px;
 }
+
+.card-title {
+    margin: 0;
+}
+
+.card-body p {
+    font-size: 1.1rem;
+}

@@ -1,6 +1,10 @@
 import { Outlet, Link } from "react-router-dom";
+import { React, useContext, useState } from 'react'
+import { CMSContext } from './CMSContext';
 
 export default function NavBar() {
+
+    const { continentEntries, destinationEntries } = useContext(CMSContext)
 
     return (
         <div className="navbar bg-base-100">
@@ -17,12 +21,18 @@ export default function NavBar() {
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                             </Link>
                             <ul className="p-2 bg-base-100">
-                                <li><Link to="/ContinentDetail/Europe">Europe</Link></li>
+                                <li className="dropdown">
+                                    <Link to="/ContinentDetail/Europe">Europe</Link>
+                                    <ul className="dropdown-content absolute hidden text-gray-700 pl-5 ml-24 -mt-10">
+                                        {destinationEntries.map(e => e.travelRegion == "Europe" && <li><Link to={`/DestinationDetail/${e.title}`}>{e.title}</Link></li>)}
+                                    </ul>
+                                </li>
                                 <li><Link to="/ContinentDetail/North America">North America</Link></li>
                                 <li><Link to="/ContinentDetail/Latin America">Latin America</Link></li>
                                 <li><Link to="/ContinentDetail/Oceania">Oceania</Link></li>
                                 <li><Link to="/ContinentDetail/Asia">Asia</Link></li>
                                 <li><Link to="/ContinentDetail/Africa">Africa</Link></li>
+
                             </ul>
                         </li>
                         {/* <li><a>Item 3</a></li> */}

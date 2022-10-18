@@ -5,7 +5,9 @@ import { CMSContext } from '../CMSContext';
 const Home = () => {
 
   const { destinationEntries, continentEntries } = useContext(CMSContext)
-  console.log("moin", continentEntries)
+
+  console.log("Home", continentEntries)
+
   return (
     <div id="carouselExampleControls" className="carousel slide relative" data-bs-ride="carousel" data-bs-interval="1000">
       <div className="carousel w-full">

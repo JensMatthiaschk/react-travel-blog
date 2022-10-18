@@ -2,14 +2,15 @@ import ReactMarkdown from 'react-markdown';
 import { useContext } from 'react';
 import { CMSContext } from '../CMSContext';
 import { useParams } from "react-router-dom";
+// import { GoogleMap, withScriptjs, withGoogleMap, Marker } from 'react-google-maps';
+// import Map from '../Map';
 
 export default function ContinentDetail() {
     const { destinationEntries } = useContext(CMSContext)
     const { id } = useParams();
-    const WrappedMap = withScriptjs(withGoogleMap(Map));
+    // const WrappedMap = withScriptjs(withGoogleMap(Map));
 
     return (
-
         <>
             <div className="detailPage mx-auto">
                 {destinationEntries.map(d => id == d.title ?
@@ -27,7 +28,7 @@ export default function ContinentDetail() {
                             <ReactMarkdown>{d.body}</ReactMarkdown>
                             <p>{d.travelTime && d.travelTime}</p>
                         </div>
-                        <div style={{
+                        {/* <div style={{
                             'height': '500px',
                             'width': '100vw'
                         }}>
@@ -36,7 +37,7 @@ export default function ContinentDetail() {
                                 containerElement={<div style={{ height: `100%` }} />}
                                 mapElement={<div style={{ height: `100%` }} />}
                             />
-                        </div>
+                        </div> */}
                     </>
                     : "")
                 }

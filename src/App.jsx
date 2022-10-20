@@ -7,10 +7,12 @@ import ContinentDetail from "./pages/ContinentDetail";
 import DestinationDetail from "./pages/DestinationDetail";
 import ErrorPage from "./pages/ErrorPage";
 import './App.css'
+import ScrollToTop from "./ScrollToTop";
 
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Continents />} />

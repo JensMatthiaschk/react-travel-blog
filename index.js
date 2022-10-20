@@ -1,10 +1,20 @@
 // http://localhost:8080/users/91283712?sort=price
 import express from 'express';
 import database from './database.json' assert {type: "json"}
+import continentData from './continentData.json' assert {type: "json"}
+import destinationData from './destinationData.json' assert {type: "json"}
+
+
+
 const app = express();
 const port = process.env.PORT || 8080;
 
-app.get('/', (req, res) => res.json(database));
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+})
+    .get('/continentData', (req, res) => res.json(continentData))
+    .get('/destinationData', (req, res) => res.json(destinationData))
 
 // app.get('/', (req, res) => res.send(`
 //     <h1>hello welcome to my website</h1>

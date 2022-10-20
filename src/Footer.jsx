@@ -4,7 +4,7 @@ export default function Footer() {
             <div className="footer mt-40">
                 <div className="footerContent flex px-10 justify-center">
                     <div className="ftBox ftDisclaimer">
-                        <div className="disclaimerLinks flex px-10">
+                        <div className="disclaimerLinks flex flex-col">
                             <a href="#">HELP</a>
                             <a href="#">TERMS & CONDITION</a>
                             <a href="#">PRIVACY</a>

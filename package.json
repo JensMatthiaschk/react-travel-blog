@@ -3,17 +3,22 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "index.js",
   "scripts": {
     "dev": "vite",
+    "nodemon": "nodemon index.js",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "node index.js"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.7",
     "bootstrap-icons": "^1.9.1",
     "contentful": "^9.2.5",
     "daisyui": "^2.31.0",
+    "express": "^4.18.2",
     "i": "^0.3.7",
+    "nodemon": "^2.0.20",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.3"

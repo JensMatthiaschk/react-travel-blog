@@ -17,9 +17,9 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Continents />} />
           <Route path="Continents" element={<Continents />} />
-          <Route path="ContinentDetail/:id" element={<ContinentDetail />}></Route>
-          <Route path="DestCard" element={<DestCard />} />
-          <Route path="DestinationDetail/:id" element={<DestinationDetail />} />
+          <Route path="Continents/:id" element={<ContinentDetail />}></Route>
+          {/* <Route path="DestCard" element={<DestCard />} /> */}
+          <Route path="Destinations/:id" element={<DestinationDetail />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>

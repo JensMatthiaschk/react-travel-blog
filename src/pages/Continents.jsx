@@ -8,7 +8,7 @@ export default function Continents() {
     return (
         <div className="#">
             {continentEntries.map(c =>
-                <Link to={`/ContinentDetail/${c.header}`}>
+                <Link to={`/Continents/${c.header}`}>
                     <div className="overflow-hidden">
                         <div className="hover:scale-125 hover ease-in duration-500 flex items-center justify-center mt-2 mb-2" key={c.header}
                             style={{

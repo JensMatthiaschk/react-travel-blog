@@ -12,7 +12,7 @@ export default function DestCard(id) {
     return (
         <div className="container mx-auto flex flex-wrap justify-center gap-8 ">
             {destinationEntries.map(d => id.id == d.travelRegion ?
-                <Link to={`/DestinationDetail/${d.title}`}>
+                <Link to={`/Destinations/${d.title}`}>
                     <div className="hover:scale-105 hover ease-in duration-200 card w-96 bg-base-100 shadow-xl card w-96 bg-base-100 shadow-xl">
                         <div className="card-body">
                             <h2 className="card-title text-3xl pb-5 uppercase">{d.title}</h2>

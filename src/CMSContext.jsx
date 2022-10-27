@@ -48,30 +48,6 @@ export const CMSContextProvider = (props) => {
     // }, [])
 
 
-    // useEffect(() => {
-    //     fetch('http://localhost:8080/destinationData/')
-    //         .then(res => res.json())
-    //         .then(res => {
-    //             console.log("destinationData", res)
-    //             const sanitizedEntriesDest = res.items.map((item) => {
-    //                 return item.fields
-    //             });
-    //             setDestinationEntries(sanitizedEntriesDest)
-
-    //         })
-    //     fetch('http://localhost:8080/continentData')
-    //         .then(res => res.json())
-    //         .then(res => {
-    //             console.log("continentData", res)
-    //             const sanitizedEntriesCont = res.items.map((item) => {
-    //                 return item.fields
-    //             });
-    //             setContinentEntries(sanitizedEntriesCont)
-    //         })
-    //         .catch(err => console.log(err))
-
-    // }, [])
-
     useEffect(() => {
         const getContinents = axios.get('http://localhost:8080/continentData')
         const getDestinations = axios.get('http://localhost:8080/destinationData/')
@@ -80,7 +56,7 @@ export const CMSContextProvider = (props) => {
                 setContinentEntries(allData[0].data)
                 setDestinationEntries(allData[1].data)
             }))
-            .catch(err => console.log(err))
+            .catch(err => setError(err))
     }, [])
 
     //https://medium.com/@jdhawks/make-fetch-s-happen-5022fcc2ddae
